@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td style="text-align: center;">
-                    <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
+                    <img id="spin_button" src="spin_on.png" alt="Spin" onClick="startSpin();" />
                 </td>
             </tr>
         </table>
@@ -123,11 +123,8 @@
                 theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
                 theWheel.draw();                // Call draw to render changes to the wheel.
 
-                document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
-                document.getElementById('pw2').className = "";
-                document.getElementById('pw3').className = "";
-
                 wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+                document.getElementById('spin_button').src       = "spin_on.png";
             }
 
             // -------------------------------------------------------
@@ -135,7 +132,7 @@
             // -------------------------------------------------------
             function alertPrize(indicatedSegment)
             {
-                alert("You have won " + indicatedSegment.text);
+                alert("Breakfast for today : " + indicatedSegment.text);
                 resetWheel();
             }
         </script>
