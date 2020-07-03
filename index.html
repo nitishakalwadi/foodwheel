@@ -8,20 +8,21 @@
     <body>
         <div align="center">
             <h1>Food Wheel</h1>
-            <p>
-                Beakfast for the day
-            </p>
-        </div>
-        <div>
-            <canvas id="canvas" width="434" height="434">
-                <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-            </canvas>
-        </div>
-        <div>
-            <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
-        </div>
-
-            
+            <br />
+            <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td width="438" height="582" class="the_wheel" align="center" valign="center">
+                    <canvas id="canvas" width="434" height="434">
+                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                    </canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
+                </td>
+            </tr>
+        </table>
         <script>
             // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
@@ -122,6 +123,10 @@
                 theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
                 theWheel.draw();                // Call draw to render changes to the wheel.
 
+                document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
+                document.getElementById('pw2').className = "";
+                document.getElementById('pw3').className = "";
+
                 wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
             }
 
@@ -131,7 +136,6 @@
             function alertPrize(indicatedSegment)
             {
                 alert("You have won " + indicatedSegment.text);
-                //reset wheel after alerting the food
                 resetWheel();
             }
         </script>
