@@ -10,19 +10,24 @@
             <h1>Food Wheel</h1>
             <h3>Breakfast for the day</h3>
             <table cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <td width="1000" height="1144" class="the_wheel" align="center" valign="center">
-                    <canvas id="canvas" width="1000" height="1000">
-                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                    </canvas>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: center;">
-                    <img id="spin_button" src="spin_on.png" alt="Spin" onClick="startSpin();" />
-                </td>
-            </tr>
-        </table>
+                <tr>
+                    <td style="text-align: center;">
+                        <img src="arrow_down.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="1000" height="1144" class="the_wheel" align="center" valign="center">
+                        <canvas id="canvas" width="1000" height="1000">
+                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                        </canvas>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <img id="spin_button" src="spin_on.png" alt="Spin" onClick="startSpin();" />
+                    </td>
+                </tr>
+            </table>
         <script>
             // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
